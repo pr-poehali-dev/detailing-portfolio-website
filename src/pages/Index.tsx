@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Icon from '@/components/ui/icon';
 import { Button } from '@/components/ui/button';
+import BookingDialog from '@/components/BookingDialog';
 
 const services = [
   { icon: 'Sparkles', title: 'Керамическое покрытие', desc: 'Защита кузова на 3–5 лет, зеркальный блеск и гидрофобный эффект.' },
@@ -53,7 +54,7 @@ const Index = () => {
               <a key={l.href} href={l.href} className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">{l.label}</a>
             ))}
           </nav>
-          <Button className="hidden md:inline-flex bg-primary text-primary-foreground hover:bg-primary/90 font-semibold">Записаться</Button>
+          <BookingDialog trigger={<Button className="hidden md:inline-flex bg-primary text-primary-foreground hover:bg-primary/90 font-semibold">Записаться</Button>} />
           <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
             <Icon name={menuOpen ? 'X' : 'Menu'} size={26} />
           </button>
@@ -63,7 +64,7 @@ const Index = () => {
             {navLinks.map((l) => (
               <a key={l.href} href={l.href} onClick={() => setMenuOpen(false)} className="text-muted-foreground hover:text-primary">{l.label}</a>
             ))}
-            <Button className="bg-primary text-primary-foreground font-semibold">Записаться</Button>
+            <BookingDialog trigger={<Button className="bg-primary text-primary-foreground font-semibold">Записаться</Button>} />
           </div>
         )}
       </header>
@@ -86,9 +87,11 @@ const Index = () => {
               Керамика, полировка, химчистка и защита кузова. Премиальный детейлинг с гарантией результата и вниманием к каждой детали.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-base glow-cyan">
-                <Icon name="Calendar" size={18} /> Записаться онлайн
-              </Button>
+              <BookingDialog trigger={
+                <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-base glow-cyan">
+                  <Icon name="Calendar" size={18} /> Записаться онлайн
+                </Button>
+              } />
               <Button size="lg" variant="outline" className="border-primary/40 text-foreground hover:bg-primary/10 font-semibold text-base" asChild>
                 <a href="#prices">Смотреть цены</a>
               </Button>
@@ -179,7 +182,9 @@ const Index = () => {
                     </li>
                   ))}
                 </ul>
-                <Button className={`w-full font-semibold ${p.popular ? 'bg-primary text-primary-foreground hover:bg-primary/90' : 'bg-secondary text-foreground hover:bg-secondary/80'}`}>Выбрать</Button>
+                <BookingDialog defaultService={p.name} trigger={
+                  <Button className={`w-full font-semibold ${p.popular ? 'bg-primary text-primary-foreground hover:bg-primary/90' : 'bg-secondary text-foreground hover:bg-secondary/80'}`}>Выбрать</Button>
+                } />
               </div>
             ))}
           </div>
@@ -240,9 +245,11 @@ const Index = () => {
                   </div>
                 </div>
               ))}
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold w-full">
-                <Icon name="Calendar" size={18} /> Записаться на детейлинг
-              </Button>
+              <BookingDialog trigger={
+                <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold w-full">
+                  <Icon name="Calendar" size={18} /> Записаться на детейлинг
+                </Button>
+              } />
             </div>
             <div className="rounded-2xl overflow-hidden border border-border min-h-[420px]">
               <iframe
