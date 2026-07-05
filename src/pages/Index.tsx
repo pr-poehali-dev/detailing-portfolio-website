@@ -233,7 +233,7 @@ const Index = () => {
             <div className="space-y-6">
               {[
                 { icon: 'MapPin', title: 'Адрес', text: 'г. Казань, ул. Журналистов, 56Б/1' },
-                { icon: 'Phone', title: 'Телефон', text: '+7 (999) 123-45-67' },
+                { icon: 'Phone', title: 'Телефон', text: '+7 939 337-15-15' },
                 { icon: 'Clock', title: 'Часы работы', text: 'Ежедневно с 9:00 до 21:00' },
                 { icon: 'Mail', title: 'Почта', text: 'hello@ramosdetail.ru' },
               ].map((c) => (
