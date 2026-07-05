@@ -230,7 +230,7 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-8">
             <div className="space-y-6">
               {[
-                { icon: 'MapPin', title: 'Адрес', text: 'г. Москва, ул. Автозаводская, 18, стр. 4' },
+                { icon: 'MapPin', title: 'Адрес', text: 'г. Казань, ул. Журналистов, 56Б/1' },
                 { icon: 'Phone', title: 'Телефон', text: '+7 (999) 123-45-67' },
                 { icon: 'Clock', title: 'Часы работы', text: 'Ежедневно с 9:00 до 21:00' },
                 { icon: 'Mail', title: 'Почта', text: 'hello@apexdetail.ru' },
@@ -254,7 +254,7 @@ const Index = () => {
             <div className="rounded-2xl overflow-hidden border border-border min-h-[420px]">
               <iframe
                 title="Карта проезда"
-                src="https://yandex.ru/map-widget/v1/?ll=37.657%2C55.706&z=15&pt=37.657,55.706,pm2rdm"
+                src="https://yandex.ru/map-widget/v1/?text=Казань%2C%20улица%20Журналистов%2C%2056Б%2F1&z=16"
                 className="w-full h-full min-h-[420px]"
                 loading="lazy"
               />
