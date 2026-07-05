@@ -13,9 +13,11 @@ const services = [
 ];
 
 const prices = [
-  { name: 'Экспресс', price: '2 900', unit: '₽', features: ['Мойка премиум-класса', 'Чистка стёкол', 'Обработка шин', 'Экспресс-полировка'], popular: false },
-  { name: 'Детейлинг', price: '9 900', unit: '₽', features: ['Всё из «Экспресс»', 'Химчистка салона', 'Полировка кузова', 'Защитный воск'], popular: true },
-  { name: 'Керамика Pro', price: '24 900', unit: '₽', features: ['Всё из «Детейлинг»', 'Керамическое покрытие', 'Гарантия 3 года', 'Детейлинг фар'], popular: false },
+  { name: 'Полировка стёкол', price: '5 000', unit: '₽', features: ['Удаление мутности и разводов', 'Восстановление прозрачности', 'Защитное покрытие'], popular: false },
+  { name: 'Полировка', price: '15 000', unit: '₽', features: ['Полировка кузова', 'Устранение царапин и голограмм', 'Возврат глубины цвета'], popular: false },
+  { name: 'Полировка + Керамика', price: '25 000', unit: '₽', features: ['Полная полировка кузова', 'Керамическое покрытие', 'Гидрофобный эффект'], popular: true },
+  { name: 'Оклейка зон риска', price: '20 000', unit: '₽', features: ['Защита бамперов и порогов', 'Антигравийная плёнка', 'Защита от сколов'], popular: false },
+  { name: 'Полная оклейка', price: '160 000', unit: '₽', features: ['Оклейка всего кузова', 'Защита от сколов и царапин', 'Матовая или глянцевая плёнка'], popular: false },
 ];
 
 const gallery = [
@@ -47,7 +49,7 @@ const Index = () => {
         <div className="container flex items-center justify-between h-16">
           <a href="#" className="flex items-center gap-2 font-display font-bold text-xl tracking-wide">
             <Icon name="Zap" className="text-primary" size={22} />
-            APEX<span className="text-primary">DETAIL</span>
+            RAMOS<span className="text-primary">DETAIL</span>
           </a>
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((l) => (
@@ -165,7 +167,7 @@ const Index = () => {
             <span className="text-primary font-display font-semibold uppercase tracking-widest text-sm">Цены</span>
             <h2 className="font-display font-bold uppercase text-4xl sm:text-5xl mt-2">Пакеты услуг</h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {prices.map((p) => (
               <div key={p.name} className={`relative p-8 rounded-2xl border transition-all ${p.popular ? 'border-primary bg-card glow-cyan scale-[1.02]' : 'border-border bg-card hover:border-primary/40'}`}>
                 {p.popular && <span className="absolute -top-3 left-8 px-4 py-1 rounded-full bg-primary text-primary-foreground text-xs font-bold uppercase">Популярный</span>}
@@ -233,7 +235,7 @@ const Index = () => {
                 { icon: 'MapPin', title: 'Адрес', text: 'г. Казань, ул. Журналистов, 56Б/1' },
                 { icon: 'Phone', title: 'Телефон', text: '+7 (999) 123-45-67' },
                 { icon: 'Clock', title: 'Часы работы', text: 'Ежедневно с 9:00 до 21:00' },
-                { icon: 'Mail', title: 'Почта', text: 'hello@apexdetail.ru' },
+                { icon: 'Mail', title: 'Почта', text: 'hello@ramosdetail.ru' },
               ].map((c) => (
                 <div key={c.title} className="flex items-start gap-4 p-6 rounded-2xl bg-card border border-border">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
@@ -267,9 +269,9 @@ const Index = () => {
       <footer className="border-t border-border py-10">
         <div className="container flex flex-col sm:flex-row items-center justify-between gap-4">
           <a href="#" className="flex items-center gap-2 font-display font-bold text-lg">
-            <Icon name="Zap" className="text-primary" size={20} /> APEX<span className="text-primary">DETAIL</span>
+            <Icon name="Zap" className="text-primary" size={20} /> RAMOS<span className="text-primary">DETAIL</span>
           </a>
-          <p className="text-sm text-muted-foreground">© 2026 Apex Detail. Студия детейлинга.</p>
+          <p className="text-sm text-muted-foreground">© 2026 Ramos Detail. Студия детейлинга.</p>
           <div className="flex gap-3">
             {['Instagram', 'Send', 'Youtube'].map((i) => (
               <a key={i} href="#" className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
