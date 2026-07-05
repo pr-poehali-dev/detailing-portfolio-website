@@ -20,11 +20,6 @@ const prices = [
   { name: 'Полная оклейка', price: '160 000', unit: '₽', features: ['Оклейка всего кузова', 'Защита от сколов и царапин', 'Матовая или глянцевая плёнка'], popular: false },
 ];
 
-const gallery = [
-  { before: 'https://cdn.poehali.dev/projects/06ec833f-32f5-4058-936d-76494e721d0a/files/564beb06-d7a3-4bb0-b159-c5f6b4ae9c1a.jpg', after: 'https://cdn.poehali.dev/projects/06ec833f-32f5-4058-936d-76494e721d0a/files/00c71cd6-fab8-42bf-be0a-02eb91bc8a3f.jpg', label: 'Полировка кузова' },
-  { before: 'https://cdn.poehali.dev/projects/06ec833f-32f5-4058-936d-76494e721d0a/files/b3d7cc0e-20d1-4271-bef8-a76bc67e797c.jpg', after: 'https://cdn.poehali.dev/projects/06ec833f-32f5-4058-936d-76494e721d0a/files/00c71cd6-fab8-42bf-be0a-02eb91bc8a3f.jpg', label: 'Химчистка салона' },
-];
-
 const reviews = [
   { name: 'Алексей М.', car: 'BMW M5', text: 'Машину не узнать! Керамика держится второй год, вода скатывается сама. Работа ювелирная.', rating: 5 },
   { name: 'Марина К.', car: 'Audi Q7', text: 'Салон после детей был в ужасе — вернули как из салона. Пахнет новой машиной!', rating: 5 },
@@ -33,7 +28,6 @@ const reviews = [
 
 const navLinks = [
   { label: 'Услуги', href: '#services' },
-  { label: 'Работы', href: '#gallery' },
   { label: 'Цены', href: '#prices' },
   { label: 'Отзывы', href: '#reviews' },
   { label: 'Контакты', href: '#contacts' },
@@ -125,35 +119,6 @@ const Index = () => {
                 </div>
                 <h3 className="font-display font-semibold text-xl uppercase mb-3">{s.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* GALLERY BEFORE / AFTER */}
-      <section id="gallery" className="py-24 bg-secondary/30">
-        <div className="container">
-          <div className="mb-14 max-w-2xl">
-            <span className="text-primary font-display font-semibold uppercase tracking-widest text-sm">Галерея</span>
-            <h2 className="font-display font-bold uppercase text-4xl sm:text-5xl mt-2">До и после</h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8">
-            {gallery.map((g) => (
-              <div key={g.label} className="rounded-2xl overflow-hidden border border-border bg-card">
-                <div className="grid grid-cols-2">
-                  <div className="relative">
-                    <img src={g.before} alt="До" className="w-full h-64 object-cover grayscale" />
-                    <span className="absolute top-3 left-3 px-3 py-1 rounded-full bg-background/80 text-xs font-semibold uppercase">До</span>
-                  </div>
-                  <div className="relative">
-                    <img src={g.after} alt="После" className="w-full h-64 object-cover" />
-                    <span className="absolute top-3 left-3 px-3 py-1 rounded-full bg-primary text-primary-foreground text-xs font-semibold uppercase">После</span>
-                  </div>
-                </div>
-                <div className="p-5 font-display font-semibold uppercase tracking-wide flex items-center gap-2">
-                  <Icon name="Camera" size={18} className="text-primary" /> {g.label}
-                </div>
               </div>
             ))}
           </div>
